@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 21 Task</title>
+</head>
+<body>
+    <form action="" id="registerform">
+        <input id="inp1" name="username" type="text" placeholder="User name">
+        <input id="inp2" name="password" type="password" placeholder="password">
+        <button type="submit">submit</button>
+    </form>
+    <script>
+        const registerform = document.getElementById('registerform');
+
+        registerform.onsubmit = function(event) {
+            event.preventDefault();
+            console.log('form submitted');
+
+            // Fixed typo: target instead of targrt
+            console.log(event.target[0].value);
+            console.log(event.target[1].value);
+
+            let inp1 = document.getElementById('inp1').value;
+            let inp2 = document.getElementById('inp2').value;
+            console.log(inp1, inp2);
+
+            let pattern=/[0-9]{10}/
+            let input='45125248587'
+            console.log(input.match(pattern))
+
+            let emailpattern=/[a-zA-Z0-9._]+@[a-z]+\.[a-z]{3}/
+            let usermail='john@gmail.com'
+            console.log(usermail.match(emailpattern))
+
+            let passwordpattern=/(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#$%^&]).{8}/
+            let userpassword='John@123'
+            console.log(userpassword.match(passwordpattern))
+        }
+    </script>
+</body>
+</html>
